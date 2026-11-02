@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101d32" />
+    <title>Nova's Learning Galaxy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Nova's Learning Galaxy home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>Nova's<span class="brand-subtitle">LEARNING GALAXY</span></span>
+        </a>
+        <nav class="primary-nav">
+          <a class="nav-link is-active" href="#home" data-view="home"
+            ><span class="nav-icon">⌂</span>Home</a
+          >
+          <a class="nav-link" href="#map" data-view="map"
+            ><span class="nav-icon">✦</span>Space trail</a
+          >
+          <a class="nav-link" href="#rewards" data-view="rewards"
+            ><span class="nav-icon">♜</span>Prize shelf</a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="streak-card">
+            <div class="streak-icon">☀</div>
+            <div>
+              <strong>Cosmic streak</strong
+              ><span id="streak-copy">Your journey starts today</span>
+            </div>
+          </div>
+          <button class="profile-button" id="profile-button" type="button">
+            <span class="avatar" id="profile-avatar">N</span>
+            <span class="profile-copy"
+              ><strong id="profile-name">Space explorer</strong
+              ><small id="profile-status">Save your journey</small></span
+            >
+            <span class="profile-arrow">↗</span>
+          </button>
+        </div>
+      </aside>
+
+      <main id="home" class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs">
+            <span>YOUR GALAXY</span><span class="crumb-dot">/</span
+            ><strong>Home base</strong>
+          </div>
+          <div class="topbar-actions">
+            <div class="star-counter" aria-label="Stars earned">
+              <span>★</span><strong id="star-count">0</strong
+              ><small>stars</small>
+            </div>
+            <button class="login-button" id="login-button" type="button">
+              Log in <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="welcome-row" aria-labelledby="welcome-title">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow-dot"></span> MISSION CONTROL
+                <span class="eyebrow-date" id="today-label"></span>
+              </p>
+              <h1 id="welcome-title">
+                Ready for liftoff<span class="title-period">.</span>
+              </h1>
+              <p class="welcome-copy">
+                A universe of wonder is waiting. Where shall we explore today?
+              </p>
+            </div>
+            <button
+              class="sound-button"
+              id="sound-button"
+              type="button"
+              aria-label="Toggle sound"
+              title="Toggle sound"
+            >
+              <span id="sound-icon">♪</span>
+            </button>
+          </section>
+
+          <section class="hero-panel" aria-labelledby="hero-title">
+            <div
+              class="hero-image"
+              role="img"
+              aria-label="Planet Earth seen from space"
+            ></div>
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <div class="hero-copy">
+              <div class="mission-tag"><span></span> YOUR NEXT MISSION</div>
+              <h2 id="hero-title">The Moon<br />and beyond</h2>
+              <p>Meet our closest neighbor and discover what makes it shine.</p>
+              <button class="button-primary" id="continue-button" type="button">
+                Let's explore <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div class="mascot" aria-label="Nova the astronaut mascot">
+              <div class="mascot-spark spark-a">✦</div>
+              <div class="mascot-spark spark-b">✧</div>
+              <div class="mascot-helmet">
+                <div class="helmet-glass">
+                  <span class="helmet-glint"></span
+                  ><span class="mascot-eye eye-left"></span
+                  ><span class="mascot-eye eye-right"></span
+                  ><span class="mascot-smile"></span>
+                </div>
+              </div>
+              <div class="mascot-body">
+                <span class="suit-badge">N</span><span class="suit-pack"></span>
+              </div>
+              <div class="mascot-foot foot-left"></div>
+              <div class="mascot-foot foot-right"></div>
+            </div>
+            <div class="hero-caption">
+              <span class="caption-line"></span> NOVA IS READY TO GO
+            </div>
+          </section>
+
+          <section class="dashboard-grid">
+            <div class="learning-column">
+              <div class="section-heading" id="map">
+                <div>
+                  <p class="eyebrow section-eyebrow">CHOOSE YOUR NEXT STOP</p>
+                  <h2>Space trail</h2>
+                </div>
+                <button class="text-button" data-view="map" type="button">
+                  View all <span aria-hidden="true">→</span>
+                </button>
+              </div>
+              <div class="trail-guide" aria-live="polite">
+                <div class="guide-mascot" aria-hidden="true">
+                  <span class="guide-face"><i></i><i></i><b></b></span>
+                </div>
+                <div class="guide-message">
+                  <p class="guide-label">NOVA SAYS</p>
+                  <p id="guide-copy">
+                    Hi, explorer! I'm Nova. Pick a stop and I'll show you around
+                    the universe.
+                  </p>
+                </div>
+                <button class="guide-next" id="guide-next" type="button">
+                  Start here <span aria-hidden="true">→</span>
+                </button>
+              </div>
+              <div class="level-list" id="level-list" aria-live="polite"></div>
+            </div>
+            <aside class="side-column">
+              <section class="progress-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="eyebrow section-eyebrow">YOUR JOURNEY</p>
+                    <h3>Mission progress</h3>
+                  </div>
+                  <span class="progress-icon">↗</span>
+                </div>
+                <div class="progress-numbers">
+                  <strong id="progress-number">0<span>/5</span></strong
+                  ><span>missions<br />completed</span>
+                </div>
+                <div class="progress-track">
+                  <span id="progress-bar"></span>
+                </div>
+                <p class="progress-note" id="progress-note">
+                  Every great explorer starts somewhere.
+                </p>
+              </section>
+              <section class="reward-panel" id="rewards">
+                <div class="reward-topline">
+                  <p class="eyebrow section-eyebrow">LITTLE WINS, BIG DREAMS</p>
+                  <span class="reward-sparkle">✦</span>
+                </div>
+                <h3>Prize shelf</h3>
+                <p>Turn your stardust into something special.</p>
+                <div class="prize-preview">
+                  <span class="prize-art">🚀</span
+                  ><span
+                    ><strong>Rocket explorer</strong
+                    ><small>3 stars to unlock</small></span
+                  ><span class="prize-lock">✦</span>
+                </div>
+                <button
+                  class="button-secondary"
+                  data-view="rewards"
+                  type="button"
+                >
+                  See your prizes <span aria-hidden="true">→</span>
+                </button>
+              </section>
+            </aside>
+          </section>
+          <footer class="page-footer">
+            <span>Made for curious minds</span><span class="footer-star">✦</span
+            ><span>One small step at a time</span>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section
+        class="dialog"
+        id="dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="dialog-title"
+      >
+        <button
+          class="dialog-close"
+          id="dialog-close"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+        <div id="dialog-content"></div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
